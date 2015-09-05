@@ -19,76 +19,80 @@ This is a basic HTTP service with a JSON API. The service supports the following
 === API specification
 ---
 
-Add bird
---------
+<b>Add bird</b>
 
-[Request `POST /birds`]
+<br>
+<b>Request `POST /birds`</b>
 
 The body is a JSON object based on the JSON schema can be found in {post-birds-request.json}[https://gist.github.com/sebdah/265f4255cb302c80abd4#file-post-birds-request-json].
 
- * If `visible` is not set, it defaults to `false`.
- * `added` defaults to today's date (in UTC)
+  If `visible` is not set, it defaults to `false`.
+  `added` defaults to today's date (in UTC)
 
-### Example Request body
+Example Request body
 {"name": "Penguin", "family": "Spheniscidae", "continents": ["Antarctica"], "visible": true}
 
-[Response]
+<b>Response</b>
 
 Valid status codes:
 
- * `201 Created` if the bird was successfully added
- * `400 Bad request` if any mandatory fields were missing or if the input JSON was invalid
+  `201 Created` if the bird was successfully added
+  `400 Bad request` if any mandatory fields were missing or if the input JSON was invalid
 
 The body is a JSON object based on the JSON schema can be found in {post-birds-response.json}[https://gist.github.com/sebdah/265f4255cb302c80abd4#file-post-birds-response-json].
 
-List all birds
---------------
+<br>
+<b>List all birds</b>
 
-[Request `GET /birds`]
+<br>
+
+<b>Request `GET /birds`</b>
 
 Empty body.
 
-[Response]
+<b>Response</b>
 
 Valid status codes:
 
- * `200 OK`
+  `200 OK`
 
 The body is a JSON array based on the JSON schema can be found in {get-birds-response.json}[https://gist.github.com/sebdah/265f4255cb302c80abd4#file-get-birds-response-json].
 
 This API only shows birds that have visible flag set as true.
+<br>
+<b>Get bird by id</b>
+<br>
 
-Get bird by id
---------------
-
-[Request `GET /birds/{id}`]
+<b>Request `GET /birds/{id}`</b>
 
 Empty body.
 
-[Response]
+<b>Response</b>
 
 Valid status codes:
 
- * `200 OK` if the bird exists
- * `404 Not found` if the bird does not exist
+  `200 OK` if the bird exists
+  `404 Not found` if the bird does not exist
 
 A `404 Not found` is expected when the bird does not exist. Birds with `visible` set to `false` would be returned with a `200 OK`.
 
 The response body for a `200 OK` request can be found in {get-birds-id-response.json}[https://gist.github.com/sebdah/265f4255cb302c80abd4#file-get-birds-id-response-json].
 
-Delete bird by id
------------------
+<br>
+<b>Delete bird by id</b>
 
-[Request `DELETE /birds/{id}`]
+<br>
+
+<b>Request `DELETE /birds/{id}`</b>
 
 Empty body
 
-[Response]
+<b>Response</b>
 
 Valid status codes:
 
- * `200 OK` if the bird has been removed
- * `404 Not found` if the bird didn't exist
+  `200 OK` if the bird has been removed
+  `404 Not found` if the bird didn't exist
 
 Empty body.
 
