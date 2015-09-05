@@ -1,58 +1,58 @@
-Overview
-========
+=== Overview
+---
 This is a basic HTTP service with a JSON API. The service supports the following requests:
 
- - `GET /birds` - List all birds
- - `POST /birds` - Add a new bird
- - `GET /birds/{id}` - Get details on a specific bird
- - `DELETE /birds/{id}` - Delete a bird by id
+ * `GET /birds` - List all birds
+ * `POST /birds` - Add a new bird
+ * `GET /birds/{id}` - Get details on a specific bird
+ * `DELETE /birds/{id}` - Delete a bird by id
 
 
-Configuration
-============
+=== Configuration
+---
 
- - MongoDB should be running on the default port `27017`
- - This app is built using ruby on rails version 4.1.8
- - This uses mongo_mapper gem to talk to MongoDB
+ * MongoDB should be running on the default port `27017`
+ * This app is built using ruby on rails version 4.1.8
+ * This uses mongo_mapper gem to talk to MongoDB
 
 
-API specification
-=================
+=== API specification
+---
 
 Add bird
 --------
 
-### Request `POST /birds`
+[Request `POST /birds`]
 
 The body is a JSON object based on the JSON schema can be found in {post-birds-request.json}[https://gist.github.com/sebdah/265f4255cb302c80abd4#file-post-birds-request-json].
 
- - If `visible` is not set, it defaults to `false`.
- - `added` defaults to today's date (in UTC)
+ * If `visible` is not set, it defaults to `false`.
+ * `added` defaults to today's date (in UTC)
 
 ### Example Request body
 {"name": "Penguin", "family": "Spheniscidae", "continents": ["Antarctica"], "visible": true}
 
-### Response
+[Response]
 
 Valid status codes:
 
- - `201 Created` if the bird was successfully added
- - `400 Bad request` if any mandatory fields were missing or if the input JSON was invalid
+ * `201 Created` if the bird was successfully added
+ * `400 Bad request` if any mandatory fields were missing or if the input JSON was invalid
 
 The body is a JSON object based on the JSON schema can be found in {post-birds-response.json}[https://gist.github.com/sebdah/265f4255cb302c80abd4#file-post-birds-response-json].
 
 List all birds
 --------------
 
-### Request `GET /birds`
+[Request `GET /birds`]
 
 Empty body.
 
-### Response
+[Response]
 
 Valid status codes:
 
- - `200 OK`
+ * `200 OK`
 
 The body is a JSON array based on the JSON schema can be found in {get-birds-response.json}[https://gist.github.com/sebdah/265f4255cb302c80abd4#file-get-birds-response-json].
 
@@ -61,16 +61,16 @@ This API only shows birds that have visible flag set as true.
 Get bird by id
 --------------
 
-### Request `GET /birds/{id}`
+[Request `GET /birds/{id}`]
 
 Empty body.
 
-### Response
+[Response]
 
 Valid status codes:
 
- - `200 OK` if the bird exists
- - `404 Not found` if the bird does not exist
+ * `200 OK` if the bird exists
+ * `404 Not found` if the bird does not exist
 
 A `404 Not found` is expected when the bird does not exist. Birds with `visible` set to `false` would be returned with a `200 OK`.
 
@@ -79,21 +79,21 @@ The response body for a `200 OK` request can be found in {get-birds-id-response.
 Delete bird by id
 -----------------
 
-### Request `DELETE /birds/{id}`
+[Request `DELETE /birds/{id}`]
 
 Empty body
 
-### Response
+[Response]
 
 Valid status codes:
 
- - `200 OK` if the bird has been removed
- - `404 Not found` if the bird didn't exist
+ * `200 OK` if the bird has been removed
+ * `404 Not found` if the bird didn't exist
 
 Empty body.
 
-Running the Service
-===================
+=== Running the Service
+---
 
 Go to the 'birds' folder location in the terminal and run 'rails server'.
 
