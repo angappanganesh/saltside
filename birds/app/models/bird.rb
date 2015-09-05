@@ -7,6 +7,6 @@ class Bird
   key :name, String
   key :family, String
   key :continents, Array
-  key :added, String, default: Time.now.strftime('%Y-%m-%d')
+  key :added, String, default: Time.now.utc.strftime('%Y-%m-%d')
   key :visible, Boolean, default: false
 end
