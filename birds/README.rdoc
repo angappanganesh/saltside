@@ -21,7 +21,7 @@ This is a basic HTTP service with a JSON API. The service supports the following
 
 <b>Add bird</b>
 
-<br>
+
 <b>Request `POST /birds`</b>
 
 The body is a JSON object based on the JSON schema can be found in {post-birds-request.json}[https://gist.github.com/sebdah/265f4255cb302c80abd4#file-post-birds-request-json].
@@ -41,10 +41,10 @@ Valid status codes:
 
 The body is a JSON object based on the JSON schema can be found in {post-birds-response.json}[https://gist.github.com/sebdah/265f4255cb302c80abd4#file-post-birds-response-json].
 
-<br>
+
 <b>List all birds</b>
 
-<br>
+
 
 <b>Request `GET /birds`</b>
 
@@ -59,9 +59,9 @@ Valid status codes:
 The body is a JSON array based on the JSON schema can be found in {get-birds-response.json}[https://gist.github.com/sebdah/265f4255cb302c80abd4#file-get-birds-response-json].
 
 This API only shows birds that have visible flag set as true.
-<br>
+
 <b>Get bird by id</b>
-<br>
+
 
 <b>Request `GET /birds/{id}`</b>
 
@@ -78,10 +78,10 @@ A `404 Not found` is expected when the bird does not exist. Birds with `visible`
 
 The response body for a `200 OK` request can be found in {get-birds-id-response.json}[https://gist.github.com/sebdah/265f4255cb302c80abd4#file-get-birds-id-response-json].
 
-<br>
+
 <b>Delete bird by id</b>
 
-<br>
+
 
 <b>Request `DELETE /birds/{id}`</b>
 
